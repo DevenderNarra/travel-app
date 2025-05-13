@@ -49,7 +49,7 @@ class BookingaView(APIView):
         seat_id = request.data.get('seat_id')
         try:
             seat = Seat.objects.get(id=seat_id, is_booked=False)
-            if seat_id.is_booked:
+            if seat.is_booked:
                 return Response({'error': 'Seat already booked'}, status=status.HTTP_400_BAD_REQUEST)
             booking = Booking.objects.create(
                 user=request.user,
