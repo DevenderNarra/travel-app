@@ -40,7 +40,6 @@ class BusListView(generics.ListCreateAPIView):
 class BusDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Bus.objects.all()
     serializer_class = BusSerializer
-    permission_classes = [IsAuthenticated]
 
 class BookingaView(APIView):
     permission_classes = [IsAuthenticated]
